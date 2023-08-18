@@ -7,7 +7,7 @@ const Header = ({ movies, setSearchResults }) => {
       return setSearchResults(movies);
     } else {
       const resultArray = movies?.filter((movie) =>
-        movie?.title?.includes(e.target.value)
+        movie?.title?.toLowerCase().includes(e.target.value.toLowerCase())
       );
       setSearchResults(resultArray);
     }
