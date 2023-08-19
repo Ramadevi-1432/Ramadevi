@@ -12,10 +12,10 @@ const MovieCard = ({ movie }) => {
           className="rounded-lg"
         />
         <div className="flex justify-between p-2">
-          <span className="font-semibold text-lg">{title}</span>
+          <span className="font-semibold text-md">{title}</span>
           <span className="font-semibold">⭐ {vote_average}</span>
         </div>
-        <span className="mx-2">{overview.slice(0, 75)}...</span>
+        <span className="mx-2 text-sm mb-4">{overview.slice(0, 100)}...</span>
       </div>
     </>
   );

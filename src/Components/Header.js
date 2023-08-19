@@ -1,16 +1,15 @@
 import React from "react";
 import { HiMiniHome } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const Header = ({ movies, setSearchResults }) => {
   const handleSearchChange = (e) => {
-    if (!e.target.value) {
-      return setSearchResults(movies);
-    } else {
-      const resultArray = movies?.filter((movie) =>
-        movie?.title?.toLowerCase().includes(e.target.value.toLowerCase())
-      );
-      setSearchResults(resultArray);
-    }
+    if (!e.target.value) return setSearchResults(movies);
+    const resultArray = movies?.filter((movie) =>
+      movie?.title?.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+
+    setSearchResults(resultArray);
   };
   return (
     <div>
@@ -27,7 +26,9 @@ const Header = ({ movies, setSearchResults }) => {
             />
           </form>
         </div>
-        <HiMiniHome className="mx-2 col-span-2 cursor-pointer" size={30} />
+        <Link to="/">
+          <HiMiniHome className="mx-2 col-span-2" size={30} />
+        </Link>
       </div>
     </div>
   );
